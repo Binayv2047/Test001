@@ -1,0 +1,33 @@
+ public abstract class Employee
+    {
+        public string FirstName;
+        public string lastName;
+        public int ID;
+        public double salary;
+        public double monthlysalary;
+        public abstract void Totalannualsalary();
+    }
+        public class TempEmployee : Employee
+        {
+            public int workdays;
+            public override void Totalannualsalary()
+            {
+                double sal = monthlysalary * workdays;
+                Console.WriteLine("Total annual salary is: {0}", sal);
+            }
+        }
+    
+    class program
+    {
+        static void Main(string[] args)
+        {
+            Employee TE1 = new TempEmployee();
+            TE1.FirstName = "Binay";
+            TE1.lastName = "Mishra";
+            TE1.ID = 147;
+            TE1.monthlysalary = 11000;
+            TE1.Totalannualsalary();
+
+        }
+    }
+}
